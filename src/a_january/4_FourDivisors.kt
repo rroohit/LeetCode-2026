@@ -19,13 +19,10 @@ package a_january
  *  ## Complexity:
  *       - Time complexity: O(n · √m)
  *          - where m is the maximum value in nums
- *
  *       - Space complexity: O(1)
  *
  *  ## Code -
- *  sumFourDivisors(), getFourSum(), getSqrt()
  */
-
 fun main() {
 
     val testCases = listOf(
