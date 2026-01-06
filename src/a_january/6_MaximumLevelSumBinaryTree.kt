@@ -51,8 +51,8 @@ fun maxLevelSum(root: TreeNode?): Int {
     while (qu.isNotEmpty()) {
         val size = qu.size
         var currSum = 0
-        for (i in 1..size) {
-            val currNode = qu.poll() ?: break
+        repeat(size) {
+            val currNode = qu.poll() ?: return@repeat
             currSum += currNode.`val`
             if (currNode.left != null) qu.offer(currNode.left)
             if (currNode.right != null) qu.offer(currNode.right)
