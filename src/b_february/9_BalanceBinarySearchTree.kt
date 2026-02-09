@@ -6,26 +6,30 @@ import z_data_types.inorderPrint
 
 /**
  * Problem: 1382. Balance a Binary Search Tree.
+ *
  *      Given the root of a Binary Search Tree (BST), return a balanced BST
  *      containing the same node values.
  *
  * ## Intuition -
+ *
  *      Inorder traversal of a BST gives nodes in sorted order.
  *      If we store these nodes in an array and always pick the middle element
  *      as the root, we can rebuild a height-balanced BST.
  *
  * ## Approach -
+ *
  *      1. Perform inorder traversal of the BST and store nodes in an array.
  *      2. Recursively build a balanced BST by choosing the middle element
  *          of the array/subarray as the root.
  *      3. Assign left and right subtrees using the same strategy.
  *
  * ## Complexity:
+ *
  *   - Time complexity: O(n)
- *     (Each node is visited once during traversal and reconstruction)
+ *      (Each node is visited once during traversal and reconstruction)
  *
  *   - Space complexity: O(n)
- *     (Array to store nodes + recursion stack)
+ *      (Array to store nodes + recursion stack)
  *
  * ## Code -
  */
