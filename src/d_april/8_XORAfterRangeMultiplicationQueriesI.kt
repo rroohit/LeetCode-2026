@@ -12,13 +12,13 @@ fun main() {
     )
 
     testCases.forEach { (nums, queries) ->
-        println("Result ==> ${xorAfterQueries(nums, queries)}")
+        println("Result ==> ${xorAfterQueries1(nums, queries)}")
     }
 
 }
 
 // TC - O(q * n) : SC - O(1)
-fun xorAfterQueries(nums: IntArray, queries: Array<IntArray>): Int {
+private fun xorAfterQueries1(nums: IntArray, queries: Array<IntArray>): Int {
     val mod = 1000000007
     for ((l, r, k, v) in queries) {
         for (i in l..r step k) {
