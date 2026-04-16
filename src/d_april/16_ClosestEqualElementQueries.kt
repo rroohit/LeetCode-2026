@@ -17,7 +17,7 @@ fun main() {
 
 }
 
-// TC - O(n log n), SC - O(n)
+// TC - O(n + q log n), SC - O(n)
 fun solveQueries(nums: IntArray, queries: IntArray): List<Int> {
     val n = nums.size
     val numInd = hashMapOf<Int, ArrayList<Int>>()
