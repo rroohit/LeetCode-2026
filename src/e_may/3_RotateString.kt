@@ -30,8 +30,7 @@ fun rotateStringOne(s: String, goal: String): Boolean {
         if (s[i] == goal[0]) {
             var j = 0
             while (j < n) {
-                val next = (i + j) % n
-                if (goal[j] != s[next]) break
+                if (goal[j] != s[(i + j) % n]) break
                 j++
             }
             if (j == n) return true
