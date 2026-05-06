@@ -16,6 +16,28 @@ fun main() {
 fun rotateTheBox(boxGrid: Array<CharArray>): Array<CharArray> {
     val m = boxGrid.size // row -> column
     val n = boxGrid[0].size // column -> row
+    val mat = Array(n) { CharArray(m) { '.' } }
+    for (c in m - 1 downTo 0) {
+        var r = n - 1
+        for (l in r downTo 0) {
+            if (boxGrid[m - 1 - c][l] == '#') {
+                mat[l][c] = '.'
+                mat[r--][c] = '#'
+            }
+
+            if (boxGrid[m - 1 - c][l] == '*') {
+                r = l - 1
+                mat[l][c] = '*'
+            }
+        }
+    }
+    return mat
+}
+
+// TC - O(m * n) :: SC - O(n * m)
+fun rotateTheBox1(boxGrid: Array<CharArray>): Array<CharArray> {
+    val m = boxGrid.size // row -> column
+    val n = boxGrid[0].size // column -> row
 
     val mat = Array(n) { CharArray(m) { '.' } }
 
