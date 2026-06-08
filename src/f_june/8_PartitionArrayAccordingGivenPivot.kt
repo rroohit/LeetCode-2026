@@ -13,8 +13,21 @@ fun main() {
 
 }
 
-// TC - O(n) :: SC - O(n)
+// TC - O(n) :: SC - O(1)
 fun pivotArray(nums: IntArray, pivot: Int): IntArray {
+    val n = nums.size
+    val result = IntArray(n) { pivot }
+    var i = 0
+    for (num in nums) if (num < pivot) result[i++] = num
+
+    i = n - 1
+    for (j in n - 1 downTo 0) if (nums[j] > pivot) result[i--] = nums[j]
+
+    return result
+}
+
+// TC - O(n) :: SC - O(n)
+fun pivotArray1(nums: IntArray, pivot: Int): IntArray {
     val less = mutableListOf<Int>()
     val equal = mutableListOf<Int>()
     val greater = mutableListOf<Int>()
