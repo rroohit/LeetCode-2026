@@ -19,6 +19,7 @@ fun main() {
 
 }
 
+// TC - O(n * m) :: SC - O(1)
 private val za = ('a'..'z').toList().reversed()
 fun mapWordWeights(words: Array<String>, weights: IntArray): String {
     val sb = StringBuilder()
