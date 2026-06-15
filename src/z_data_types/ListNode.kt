@@ -1,6 +1,6 @@
 package z_data_types
 
-class ListNode(var `val`: Int) {
+class ListNode(var `val`: Int = 0) {
     var next: ListNode? = null
 }
 
