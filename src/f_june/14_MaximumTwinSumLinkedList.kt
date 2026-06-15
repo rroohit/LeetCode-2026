@@ -18,8 +18,34 @@ fun main() {
 
 }
 
-// TC - O(n) :: SC - O(n)
+// TC - O(n) :: SC - O(1)
 fun pairSum(head: ListNode?): Int {
+    var rightHead: ListNode? = head
+    var fast: ListNode? = head
+    var leftHead : ListNode? = null
+
+    while (fast != null && fast.next != null) {
+        fast = fast.next?.next
+        val temp = rightHead?.next
+        rightHead?.next = leftHead
+        leftHead = rightHead
+        rightHead = temp
+    }
+
+    var maxPair = 0
+    while (rightHead != null && leftHead != null) {
+        maxPair = maxOf(
+            rightHead.`val` + leftHead.`val`, maxPair
+        )
+        rightHead = rightHead.next
+        leftHead = leftHead.next
+    }
+
+    return maxPair
+}
+
+// TC - O(n) :: SC - O(1)
+fun pairSum2(head: ListNode?): Int {
     var slow: ListNode? = head
     var fast: ListNode? = head
 
